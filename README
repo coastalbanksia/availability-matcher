@@ -1,0 +1,26 @@
+# Availability Matcher
+
+A Python tool for pairing people based on overlapping availability windows.
+It uses weighted maximum‑cardinality matching to pair as many participants as possible
+while reducing repeat pairings across cycles. It supports trio formation when pairing is not possible.
+
+## Features
+
+- Imports availability data from a CSV (exported from a Google Sheet)
+- Computes overlapping time intervals between every pair of participants
+- Uses a weighted maximum‑cardinality matching algorithm to:
+    - Pair as many people as possible
+    - Prefer fresh pairings by penalizing repeat matches
+- Supports trio formation when three participants share a common overlap
+- Outputs:
+  - `matches.csv` — matched pairs with their overlapping times, includes unmatched participants
+  - `past_matches.csv` — updated history of previous pairings
+
+## Requirements
+
+- Python 3.10+
+- Dependencies listed in `requirements.txt`
+
+## License
+
+This project is licensed under the MIT License.
